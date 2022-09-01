@@ -1,0 +1,13 @@
+-in:file:spanfile input/uOR.4DKL.span
+#-abinitio:membrane
+#-abinitio:stage2_patch  /raid2/xf1/CXCR4_Arrestin/Symmetry_docking/input/score_membrane_s2.wts_patch
+#-abinitio:stage3a_patch /raid2/xf1/CXCR4_Arrestin/Symmetry_docking/input/score_membrane_s3a.wts_patch
+#-abinitio:stage3b_patch /raid2/xf1/CXCR4_Arrestin/Symmetry_docking/input/score_membrane_s3b.wts_patch
+#-abinitio:stage4_patch  /raid2/xf1/CXCR4_Arrestin/Symmetry_docking/input/score_membrane_s4.wts_patch
+-membrane:fixed_membrane
+-membrane:Menv_penalties
+-membrane:Membed_init
+-score:weights membrane_highres_Menv_smooth_dock3.wts
+-symmetry:membrane
+-symmetry:highres_scorefxn docking_membrane_highres_Menv_smooth_dock3.wts
+-symmetry:highres_pack_scorefxn membrane_highres_Menv_smooth_dock3.wts

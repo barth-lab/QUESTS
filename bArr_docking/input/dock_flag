@@ -1,0 +1,8 @@
+-database /raid2/xf1/trunk_072512/rosetta_database/
+-nstruct 1000
+-ex1
+-ex2
+-ex2aro
+-dock_pert 3 8
+-out:file:fullatom
+-out:file:silent_struct_type binary
