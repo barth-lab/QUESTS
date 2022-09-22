@@ -1,0 +1,7 @@
+-database PATH_TO_ROSETTA_DATABASE/trunk_072512/rosetta_database/
+-nstruct 400
+-ex1
+-ex2
+-ex2aro
+-dock_pert 3 8
+-out:file:silent Gi_dock.out
