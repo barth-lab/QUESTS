@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --time 20:00:00 -n 1
+#SBATCH --array=1-50
+#SBATCH --output slurm.out
+#SBATCH --error slurm.err
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+
+
+declare -a commands
+
+for i in {1..50}
+do
+    printf -v s "%03d" $i
+    commands[$i]="/home/jefferso/sideloads/barth/Source/Symmetric_docking/gauss_backups/trunk_072512/SymDock.static.linuxgccrelease \
+    -database /home/jefferso/sideloads/barth/Source/Minirosetta/trunk_072512/rosetta_database/ \
+    -in:file:s input/"$1"_INPUT.pdb \
+    -in:file:native input/6DDF_c2exRpkAA_AB_3oduSymNative.pdb \
+    -symmetry:symmetry_definition input/$2 \
+    -out:nstruct 200 \
+    -out:file:silent output/"$1"_symdock.out \
+    -out:file:scorefile output/score_$1.sc \
+    @input/Native_SymDock_flag \
+    -out:suffix _$s \
+    -seed_offset $s \
+    > output/"$1"_$s.log \
+    2> output/"$1"_$s.err"
+done
+
+bash -c "${commands[${SLURM_ARRAY_TASK_ID}]}"
+
+echo FINISHED at `date`
+

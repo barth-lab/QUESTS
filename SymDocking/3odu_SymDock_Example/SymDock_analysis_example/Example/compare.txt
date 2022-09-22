@@ -1,0 +1,15 @@
+# The following show the ways to compare the two clusters: average IE, best IE, Range of Angle, Range of Distance, Cluster size etc.
+# All the information can be found in cluster*.txt files
+WT	average IE	Size	Angle Range	Distance Range		best IE
+cluster0	-16.28	11	-27.7 to 9.99	14.5 to 24.91		-18.23
+cluster1	-18.03	63	44.69 to 76.54	12.13 to 16.35		-24.28
+
+		Average interface Energy			cluster size				
+
+	Near-native	Alternative	difference	Near-native	Alternative	Total		
+WT	-18.03	        -16.28   	-1.75	        63 (85.1%)	11(14.9%)	74	
+
+		Best Interface Energy			
+
+	Near-native	Alternative		
+WT	-24.28	        -18.23
