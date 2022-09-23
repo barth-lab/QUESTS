@@ -1,4 +1,4 @@
-$ROS/source/bin/cluster.linuxgccrelease \
+PATH_TO_ROSETTA/source/bin/cluster.linuxgccrelease \
     -database $R/database/  \
     -in:file:fullatom \
     -cluster:skip_align \

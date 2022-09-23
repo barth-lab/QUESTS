@@ -1,12 +1,7 @@
-#-database /raid2/xf1/trunk_072512/rosetta_database/
-
 @input/flags_membrane_6DDF
 
-#-in:file:s input/5C1Mrlx.WT_AB_INPUT.pdb
-#-in:file:native input/5C1Mrlx.WT_AB.pdb
 -ignore_unrecognized_res
 
-#-symmetry:symmetry_definition input/c2_symmetry_sep
 -symmetry:initialize_rigid_body_dofs
 -symmetry:symmetric_rmsd
 
@@ -15,10 +10,7 @@
 -packing:ex2aro
 
 -out:file:silent_struct_type binary
-#-out:file:silent output/5C1Mrlx.WT_symdock.out
-#-out:nstruct 100
 -out:file:fullatom
-#-out:file:scorefile output/score.sc
 
 # added for Symdock_native_docking folder
 # structure repack without following flag, otherwise it won't, weird.
